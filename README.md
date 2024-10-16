@@ -30,20 +30,29 @@ To make it work with zsh, you might need to add this to your .zprofile:
 
 For more information read https://rye.astral.sh/guide/installation/
 
-All done!```
+All done!
+```
 
 Then run
+```
 source ~/.zprofile
 ➜ ~ echo $PATH
-
+```
+```
 ➜ ~ python --version
 Python 3.12.6
+```
+```
 ➜ ~ python3 --version
 Python 3.12.6
+```
 
-Inside the package/project you are building
-
+Inside the package/project you are building run:
+```
 ✗ rye install requests
+```
+Output
+```
 Resolved 5 packages in 414ms
 Prepared 5 packages in 208ms
 Installed 5 packages in 5ms
@@ -115,9 +124,8 @@ Installed 1 package in 1ms
   ~ webscraperpython==0.1.0 (from file:///
   Done!
 ```
-  #Run web-scraping.py
-  `➜ WebscraperPython git:(main) ✗ python web-scraping.py`
-  https://www.iana.org/domains/example
+  
+#Run web-scraping.py
   `➜ WebscraperPython git:(main) ✗ python web-scraping.py`
   Output
 ```
