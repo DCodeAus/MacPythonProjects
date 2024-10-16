@@ -11,7 +11,7 @@ Similar to node/npm where python is installed within the project as opposed to g
 Run `curl -sSf https://rye.astral.sh/get | bash`
 
 Output
-
+```
 This script will automatically download and install rye (latest) for you.
 
 ✔ Continue? · yes
@@ -114,14 +114,14 @@ Installed 1 package in 1ms
 - soupsieve==2.6
   ~ webscraperpython==0.1.0 (from file:///
   Done!
-
+```
   #Run web-scraping.py
   `➜ WebscraperPython git:(main) ✗ python web-scraping.py`
   https://www.iana.org/domains/example
   `➜ WebscraperPython git:(main) ✗ python web-scraping.py`
   Output
-
-  ```https://speedcafe.com/news/
+```
+  https://speedcafe.com/news/
   /motorsport-event-calendar
   https://speedcafe.com/results/
   https://speedcafe.com/podcasts/
@@ -138,7 +138,7 @@ Installed 1 package in 1ms
   https://www.youtube.com/@speedcafetv
   #jeg_loginform
   #jeg_registerform
-  ```
+  
 
 #
 
@@ -166,7 +166,5 @@ https://speedcafe.com/gt/gt-europe/
 https://speedcafe.com/live-stream-imsa-sportscar-championship-petit-le-mans-road-atlanta/
 https://speedcafe.com/live-stream-imsa-sportscar-championship-petit-le-mans-road-atlanta/
 https://speedcafe.com/
-
-```
 
 ```
