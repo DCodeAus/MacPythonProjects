@@ -1,14 +1,18 @@
 # webscraperpython
 
-Webscraper using beautiful soup and Python.
+#Webscraper using beautiful soup and Python.
 
-This points towards a site with multiple references to feed through the scraper, as opposed to a very basic demo that was provided.
+This points towards a site with multiple references to feed through the scraper, as opposed to a very basic demo that was provided when I was first setting this out.
 
-This is part of the testing of the setup of a new Mac testing the Rye package suite. Similar to node/npm where python is installed within the project as opposed to globally on the computer. Maybe better towards development to avoid conflicts.
+This is part of the testing of the setup of a new Mac testing the Rye package suite.
+Similar to node/npm where python is installed within the project as opposed to globally on the computer. Maybe suited better towards development to avoid conflicts as it installs the correct package you are after within the project. Great for maintainence of old tooling systems when migrating to newer versions.
 
-To install rye
-curl -sSf https://rye.astral.sh/get | bash
-This script will automatically download and install rye (latest) for you.
+##To install rye
+Run `curl -sSf https://rye.astral.sh/get | bash`
+
+Output
+
+````This script will automatically download and install rye (latest) for you.
 
 ✔ Continue? · yes
 ? What should running `python` or `python3` do when you are not inside a Rye man
@@ -26,7 +30,7 @@ To make it work with zsh, you might need to add this to your .zprofile:
 
 For more information read https://rye.astral.sh/guide/installation/
 
-All done!
+All done!```
 
 Then run
 source ~/.zprofile
@@ -74,7 +78,7 @@ Installed 1 package in 1ms
   File "/Users/Code/WebscraperPython/web-scraping.py", line 1, in <module>
   import requests
   ModuleNotFoundError: No module named 'requests'
-  ➜ WebscraperPython git:(main) ✗ rye add requests  
+  ➜ WebscraperPython git:(main) ✗ rye add requests
   Added requests>=2.32.3 as regular dependency
   Reusing already existing virtualenv
   Generating production lockfile: /Users//Code/WebscraperPython/requirements.lock
@@ -110,9 +114,11 @@ Installed 1 package in 1ms
 - soupsieve==2.6
   ~ webscraperpython==0.1.0 (from file:///
   Done!
-  ➜ WebscraperPython git:(main) ✗ python web-scraping.py
+
+  #Run web-scraping.py
+  `➜ WebscraperPython git:(main) ✗ python web-scraping.py`
   https://www.iana.org/domains/example
-  ➜ WebscraperPython git:(main) ✗ python web-scraping.py
+  `➜ WebscraperPython git:(main) ✗ python web-scraping.py`
   https://speedcafe.com/news/
   /motorsport-event-calendar
   https://speedcafe.com/results/
@@ -157,3 +163,4 @@ https://speedcafe.com/gt/gt-europe/
 https://speedcafe.com/live-stream-imsa-sportscar-championship-petit-le-mans-road-atlanta/
 https://speedcafe.com/live-stream-imsa-sportscar-championship-petit-le-mans-road-atlanta/
 https://speedcafe.com/
+````
