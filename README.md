@@ -12,7 +12,7 @@ Run `curl -sSf https://rye.astral.sh/get | bash`
 
 Output
 
-````This script will automatically download and install rye (latest) for you.
+This script will automatically download and install rye (latest) for you.
 
 ✔ Continue? · yes
 ? What should running `python` or `python3` do when you are not inside a Rye man
@@ -119,7 +119,9 @@ Installed 1 package in 1ms
   `➜ WebscraperPython git:(main) ✗ python web-scraping.py`
   https://www.iana.org/domains/example
   `➜ WebscraperPython git:(main) ✗ python web-scraping.py`
-  https://speedcafe.com/news/
+  Output
+
+  ```https://speedcafe.com/news/
   /motorsport-event-calendar
   https://speedcafe.com/results/
   https://speedcafe.com/podcasts/
@@ -136,6 +138,7 @@ Installed 1 package in 1ms
   https://www.youtube.com/@speedcafetv
   #jeg_loginform
   #jeg_registerform
+  ```
 
 #
 
@@ -163,4 +166,7 @@ https://speedcafe.com/gt/gt-europe/
 https://speedcafe.com/live-stream-imsa-sportscar-championship-petit-le-mans-road-atlanta/
 https://speedcafe.com/live-stream-imsa-sportscar-championship-petit-le-mans-road-atlanta/
 https://speedcafe.com/
-````
+
+```
+
+```
