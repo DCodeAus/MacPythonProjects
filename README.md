@@ -7,6 +7,17 @@ This points towards a site with multiple references to feed through the scraper,
 This is part of the testing of the setup of a new Mac testing the Rye package suite.
 Similar to node/npm where python is installed within the project as opposed to globally on the computer. Maybe suited better towards development to avoid conflicts as it installs the correct package you are after within the project. Great for maintainence of old tooling systems when migrating to newer versions.
 
+## Now using uv (Oct 2026)
+Rye has been discontinued in favour of [uv](https://docs.astral.sh/uv/) (same authors), so this project now uses uv with Python 3.12.
+
+```bash
+uv sync                    # create .venv and install requests + bs4
+uv run web-scraping.py     # run the scraper
+uv add <package>           # add a dependency
+```
+
+The rye notes below are kept as a record of the original setup.
+
 ##To install rye
 Run `curl -sSf https://rye.astral.sh/get | bash`
 
