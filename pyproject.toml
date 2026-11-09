@@ -6,11 +6,11 @@ authors = [
     { name = "Daniel", email = "28221676+DCodeAus@users.noreply.github.com" }
 ]
 dependencies = [
-    "requests>=2.32.3",
+    "requests>=2.33.0",
     "bs4>=0.0.2",
 ]
 readme = "README.md"
-requires-python = ">= 3.8"
+requires-python = ">= 3.10"
 
 [build-system]
 requires = ["hatchling"]
