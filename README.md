@@ -1,27 +1,61 @@
-# webscraperpython
+# Web Scraper (Python)
 
-#Webscraper using beautiful soup and Python.
+A short Python script that downloads the [Speedcafe](https://speedcafe.com) motorsport news homepage and prints every link on it. It's a starting point for web scraping, which means pulling information out of web pages with code. It uses two popular packages: [Requests](https://requests.readthedocs.io) to download the page and [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) to read the HTML.
 
-This points towards a site with multiple references to feed through the scraper, as opposed to a very basic demo that was provided when I was first setting this out.
+I also used it to try out modern Python project tools on a new Mac. Each project gets its own copy of Python and its packages, like `node_modules` in a JavaScript project, so projects can't clash with each other.
 
-This is part of the testing of the setup of a new Mac testing the Rye package suite.
-Similar to node/npm where python is installed within the project as opposed to globally on the computer. Maybe suited better towards development to avoid conflicts as it installs the correct package you are after within the project. Great for maintainence of old tooling systems when migrating to newer versions.
+## What you need
 
-## Now using uv (Oct 2026)
-Rye has been discontinued in favour of [uv](https://docs.astral.sh/uv/) (same authors), so this project now uses uv with Python 3.12.
+- **[uv](https://docs.astral.sh/uv/)**, a fast tool that installs Python and a project's packages for you. Install it on a Mac or Linux with:
+  ```bash
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  ```
+  (or `brew install uv`). Windows instructions are on the uv site. You don't need to install Python separately: uv downloads the right version (3.12, set in `.python-version`) automatically.
+
+## How to run it
 
 ```bash
-uv sync                    # create .venv and install requests + bs4
-uv run web-scraping.py     # run the scraper
-uv add <package>           # add a dependency
+git clone https://github.com/DCodeAus/MacPythonProjects.git   # or Code › Download ZIP
+cd MacPythonProjects
+uv run web-scraping.py
 ```
 
-The rye notes below are kept as a record of the original setup.
+The first run takes a few seconds while uv sets up a `.venv` folder with Python, Requests and Beautiful Soup. After that it starts instantly.
 
-##To install rye
+## What you'll see
+
+A long list of the links on the page, one per line, for example:
+
+```
+https://speedcafe.com/
+/
+https://speedcafe.com/news/
+https://speedcafe.com/supercars/
+https://speedcafe.com/f1/
+...
+```
+
+Links starting with `/` are on the same site (`/news/` means `https://speedcafe.com/news/`), and ones starting with `#` jump to a part of the same page. If the site replies with an error (for example 403 or 404), it prints `Failed to retrieve the webpage:` and that code instead. If you're offline, Python stops with a `ConnectionError`.
+
+## Make it your own
+
+- **Scrape a different site:** change the `url = 'https://speedcafe.com'` line in `web-scraping.py`.
+- **Find other things:** `soup.find_all('a')` finds links. Try `soup.find_all('h2')` for headings, then print `item.get_text()` instead of `link.get('href')`.
+- **Add a package:** `uv add <package-name>`.
+
+Be polite when scraping: check a site's terms of use, and don't request pages in a fast loop.
+
+## History: the original Rye setup
+
+This project started out with [Rye](https://rye.astral.sh) in 2024. Rye has since been discontinued in favour of uv, which is made by the same people, so the project switched to uv in October 2026. My original setup notes are kept below for reference; you don't need them to run the project.
+
+<details>
+<summary>Rye install notes and output (2024)</summary>
+
 Run `curl -sSf https://rye.astral.sh/get | bash`
 
 Output
+
 ```
 This script will automatically download and install rye (latest) for you.
 
@@ -136,54 +170,5 @@ Installed 1 package in 1ms
   Done!
 ```
   
-#Run web-scraping.py
-  `➜ WebscraperPython git:(main) ✗ python web-scraping.py`
-  Output
-```
-  https://speedcafe.com/news/
-  /motorsport-event-calendar
-  https://speedcafe.com/results/
-  https://speedcafe.com/podcasts/
-  /speedcafe-tv/
-  https://www.jobstop.com/
-  https://www.networkcafe.com.au/
-  https://speedcafe.com/contact/
-  https://speedsales.com.au/
-  https://torquecafe.com/
-  https://speedcafe.com/speedcafe-photo-comp/
-  https://www.facebook.com/speedcafe
-  https://www.instagram.com/speedcafe/
-  https://twitter.com/speedcafe
-  https://www.youtube.com/@speedcafetv
-  #jeg_loginform
-  #jeg_registerform
-  
 
-#
-
-https://speedcafe.com/
-
-#
-
-/
-https://speedcafe.com/supercars/
-https://speedcafe.com/supercars/super2/
-https://speedcafe.com/supercars/super3/
-https://speedcafe.com/calendar/supercars/
-https://speedcafe.com/f1/
-https://speedcafe.com/f1/drivers/
-https://speedcafe.com/f1/formula-2/
-https://speedcafe.com/f1/formula-3/
-https://speedcafe.com/calendar/f1/
-https://speedcafe.com/nascar/
-https://speedcafe.com/indycar/
-https://speedcafe.com/gt/
-https://speedcafe.com/gt/
-https://speedcafe.com/gt/bathurst-12-hour/
-https://speedcafe.com/gt/gt-australia/
-https://speedcafe.com/gt/gt-europe/
-https://speedcafe.com/live-stream-imsa-sportscar-championship-petit-le-mans-road-atlanta/
-https://speedcafe.com/live-stream-imsa-sportscar-championship-petit-le-mans-road-atlanta/
-https://speedcafe.com/
-
-```
+</details>
